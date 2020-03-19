@@ -1,13 +1,7 @@
 # Domoticz-SMA-SunnyBoy
-Domoticz plugin to get SMA Sunny Boy 1.5 information
+Domoticz plugin to get SMA Sunny Boy information
 
-ONLY TESTED FOR Raspberry Pi
-
-With Python version 3.5 & Domoticz version 4.10717 (stable)
-
-## Prerequisites
-
-If the ID's in the script doesn't get the expected information, you have to find them out by using packetcapture while accesing the  SMA Sunny Boy with your browser
+Tested with Python version 3.7, Domoticz versions 4.10717 (stable) and 4.11799 (beta)
 
 ## Installation
 
@@ -15,9 +9,9 @@ Assuming that domoticz directory is installed in your home directory.
 
 ```bash
 cd ~/domoticz/plugins
-git clone https://github.com/merlot-dev/Domoticz-SMA-SunnyBoy
+git clone https://github.com/rklomp/Domoticz-SMA-SunnyBoy
 # restart domoticz:
-sudo systemctl restart domoticz.service
+sudo systemctl restart domoticz
 ```
 In the web UI, navigate to the Hardware page. In the hardware dropdown there will be an entry called "SMA Sunny Boy".
 
@@ -37,12 +31,14 @@ sudo /etc/init.d/domoticz.sh restart
 | :--- | :--- |
 | **IP address** | IP of the SMA Sunny Boy eg. 192.168.1.231 |
 | **Password** | password for the User Group, not the Installer one |
-| **Debug** | default is True |
+| **Query interval** | how often is data retrieved from the SMA |
+| **Debug** | show debug logging |
 
 ## Acknowledgements
 
-Based on the script found here
+Based on the scripts found here
 
+https://github.com/merlot-dev/Domoticz-SMA-SunnyBoy \
 https://community.openhab.org/t/example-on-how-to-access-data-of-a-sunny-boy-sma-solar-inverter/50963/19
 
 
