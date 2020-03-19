@@ -110,8 +110,8 @@ class BasePlugin:
             relogin = False
 
             while True:
-                if attempt == 2:
-                    Domoticz.Debug("Attempt 1 failed, trying new login...")
+                if 1 < attempt < self.maxAttempts:
+                    Domoticz.Debug("Previous attempt failed, trying new login...")
                     relogin = True
                 if attempt >= self.maxAttempts:
                     Domoticz.Error("Failed to retrieve data from %s, cancelling..." % Parameters["Address"])
