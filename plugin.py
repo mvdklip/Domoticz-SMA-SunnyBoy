@@ -120,7 +120,7 @@ class BasePlugin:
 
                 sid = self.login(relogin)
                 url = "%s/getValues.json?sid=%s" % (self.baseUrl, sid)
-                payload = '{"destDev":[],"keys":["6400_00260100","6400_00262200","6100_40263F00"]}'
+                payload = '{"destDev":[],"keys":["6400_00260100","6100_40263F00"]}'
 
                 try:
                     r = requests.post(url, data=payload, headers=self.headers, verify=False)
@@ -136,10 +136,9 @@ class BasePlugin:
                     sma_pv_watt = result['6100_40263F00']['1'][0]['val']
                     if sma_pv_watt is None:
                         sma_pv_watt = 0
-                    sma_kwh_today = result['6400_00262200']['1'][0]['val']
                     sma_kwh_total = result['6400_00260100']['1'][0]['val']
 
-                    Devices[1].Update(nValue=0, sValue=str(sma_pv_watt)+";"+str(sma_kwh_today))
+                    Devices[1].Update(nValue=0, sValue=str(sma_pv_watt)+";"+str(sma_kwh_total))
                     svalue = "%.2f" % (sma_kwh_total/1000)
                     Devices[2].Update(nValue=0, sValue=svalue.replace('.', ','))
                     break
