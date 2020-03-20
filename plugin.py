@@ -139,9 +139,9 @@ class BasePlugin:
                     sma_kwh_today = result['6400_00262200']['1'][0]['val']
                     sma_kwh_total = result['6400_00260100']['1'][0]['val']
 
-                    Devices[1].Update(nValue=0, sValue=str(sma_pv_watt)+";"+str(sma_kwh_today), TimedOut=0)
+                    Devices[1].Update(nValue=0, sValue=str(sma_pv_watt)+";"+str(sma_kwh_today))
                     svalue = "%.2f" % (sma_kwh_total/1000)
-                    Devices[2].Update(nValue=0, sValue=svalue.replace('.', ','), TimedOut=0)
+                    Devices[2].Update(nValue=0, sValue=svalue.replace('.', ','))
                     break
 
         self.lastPolled += 1
