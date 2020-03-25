@@ -134,9 +134,13 @@ class BasePlugin:
 
                     result = list(j['result'].values())[0]
                     sma_pv_watt = result['6100_40263F00']['1'][0]['val']
+                    sma_kwh_total = result['6400_00260100']['1'][0]['val']
+
                     if sma_pv_watt is None:
                         sma_pv_watt = 0
-                    sma_kwh_total = result['6400_00260100']['1'][0]['val']
+
+                    if sma_kwh_total is None:
+                        continue
 
                     Devices[1].Update(nValue=0, sValue=str(sma_pv_watt)+";"+str(sma_kwh_total))
                     svalue = "%.2f" % (sma_kwh_total/1000)
