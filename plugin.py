@@ -5,7 +5,7 @@
 # Based on https://github.com/merlot-dev/Domoticz-SMA-SunnyBoy
 
 """
-<plugin key="SMASunnyBoy" name="SMA Sunny Boy Solar Inverter" author="rklomp" version="1.0.1">
+<plugin key="SMASunnyBoy" name="SMA Sunny Boy Solar Inverter" author="rklomp" version="1.0.2">
     <description>
         <h2>SMA Sunny Boy Solar Inverter Plugin</h2><br/>
         <h3>Features</h3>
@@ -18,11 +18,13 @@
         <param field="Password" label="User group password" width="200px" required="true" password="true"/>
         <param field="Mode3" label="Query interval" width="75px" required="true">
             <options>
-                <option label="20 sec" value="1"/>
-                <option label="1 min" value="3"/>
-                <option label="3 min" value="9"/>
-                <option label="5 min" value="15" default="true"/>
-                <option label="10 min" value="30"/>
+                <option label="5 sec" value="1"/>
+                <option label="15 sec" value="3"/>
+                <option label="30 sec" value="6"/>
+                <option label="1 min" value="12" default="true"/>
+                <option label="3 min" value="36"/>
+                <option label="5 min" value="60"/>
+                <option label="10 min" value="120"/>
             </options>
         </param>
         <param field="Mode6" label="Debug" width="75px">
@@ -96,7 +98,7 @@ class BasePlugin:
         self.baseUrl = "https://%s/dyn" % Parameters["Address"]
         self.login()
 
-        Domoticz.Heartbeat(20)
+        Domoticz.Heartbeat(5)
 
     def onStop(self):
         Domoticz.Debug("onStop called")
