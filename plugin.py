@@ -5,7 +5,7 @@
 # Based on https://github.com/merlot-dev/Domoticz-SMA-SunnyBoy
 
 """
-<plugin key="SMASunnyBoy" name="SMA Sunny Boy Solar Inverter" author="rklomp" version="1.0.2">
+<plugin key="SMASunnyBoy" name="SMA Sunny Boy Solar Inverter" author="rklomp" version="1.0.3">
     <description>
         <h2>SMA Sunny Boy Solar Inverter Plugin</h2><br/>
         <h3>Features</h3>
@@ -69,14 +69,14 @@ class BasePlugin:
                 if sid is None:
                     Domoticz.Error("Unable to login to SMA inverter on %s using supplied password" % Parameters["Address"])
                 self.loginSid = sid
-                Domoticz.Log("Successfully logged in to SMA inverter on %s" % Parameters["Address"])
+                Domoticz.Status("Successfully logged in to SMA inverter on %s" % Parameters["Address"])
                 Domoticz.Debug("Received SID: %s" % sid)
                 return self.loginSid
             except:
                 Domoticz.Log("No valid response from SMA inverter on %s; %s" % (Parameters["Address"], j))
 
     def logout(self):
-        Domoticz.Log("Closing session to SMA inverter on %s" % Parameters["Address"])
+        Domoticz.Status("Closing session to SMA inverter on %s" % Parameters["Address"])
 
         url = "%s/logout.json?sid=%s" % (self.baseUrl, self.loginSid)
         r = requests.post(url, data="{}", headers=self.headers, verify=False)
