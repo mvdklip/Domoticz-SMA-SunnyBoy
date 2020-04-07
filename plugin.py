@@ -142,7 +142,7 @@ class BasePlugin:
                         sma_pv_watt = 0
 
                     if sma_kwh_total is None:
-                        Domoticz.Log("Received data, but values are None %s; %s" % (Parameters["Address"], e))
+                        Domoticz.Log("Received data from %s, but values are None" % Parameters["Address"])
                         break
 
                     Devices[1].Update(nValue=0, sValue=str(sma_pv_watt)+";"+str(sma_kwh_total))
