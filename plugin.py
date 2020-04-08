@@ -1,4 +1,4 @@
-# SMA Sunny Boy 2.1 Python Plugin for Domoticz
+# SMA Sunny Boy Python Plugin for Domoticz
 #
 # Authors: merlot, rklomp
 #
@@ -168,7 +168,6 @@ def onStop():
     _plugin.onStop()
 
 
-# noinspection PyPep8Naming
 def onHeartbeat():
     global _plugin
     _plugin.onHeartbeat()
