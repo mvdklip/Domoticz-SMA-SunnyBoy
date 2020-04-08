@@ -1,7 +1,7 @@
 # Domoticz-SMA-SunnyBoy
 Domoticz plugin to get SMA Sunny Boy information
 
-Tested with Python version 3.7, Domoticz versions 4.10717 (stable) and 4.11799 (beta)
+Tested with Python version 3.7, Domoticz versions 4.10717, 4.11799 and 2020.1
 
 ## Installation
 
