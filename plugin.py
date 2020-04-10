@@ -16,6 +16,12 @@
     <params>
         <param field="Address" label="IP Address" width="200px" required="true"/>
         <param field="Password" label="User group password" width="200px" required="true" password="true"/>
+        <param field="Mode1" label="Protocol" width="75px">
+            <options>
+                <option label="HTTPS" value="https"/>
+                <option label="HTTP" value="http"  default="true" />
+            </options>
+        </param>
         <param field="Mode3" label="Query interval" width="75px" required="true">
             <options>
                 <option label="5 sec" value="1"/>
@@ -95,7 +101,8 @@ class BasePlugin:
 
         DumpConfigToLog()
 
-        self.baseUrl = "https://%s/dyn" % Parameters["Address"]
+        self.baseUrl = "%s://%s/dyn" % (Parameters["Mode1"], Parameters["Address"])
+        Domoticz.Debug("Base URL is set to %s" % self.baseUrl)
         self.login()
 
         Domoticz.Heartbeat(5)
