@@ -5,7 +5,7 @@
 # Based on https://github.com/merlot-dev/Domoticz-SMA-SunnyBoy
 
 """
-<plugin key="SMASunnyBoy" name="SMA Sunny Boy Solar Inverter" author="rklomp" version="1.0.3">
+<plugin key="SMASunnyBoy" name="SMA Sunny Boy Solar Inverter" author="rklomp" version="1.0.4">
     <description>
         <h2>SMA Sunny Boy Solar Inverter Plugin</h2><br/>
         <h3>Features</h3>
