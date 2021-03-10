@@ -11,7 +11,7 @@ Assuming that domoticz directory is installed in your home directory.
 cd ~/domoticz/plugins
 git clone https://github.com/rklomp/Domoticz-SMA-SunnyBoy
 # restart domoticz:
-sudo systemctl restart domoticz
+sudo /etc/init.d/domoticz.sh restart
 ```
 In the web UI, navigate to the Hardware page. In the hardware dropdown there will be an entry called "SMA Sunny Boy".
 
