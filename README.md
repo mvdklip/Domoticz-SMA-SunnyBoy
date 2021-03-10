@@ -15,6 +15,8 @@ sudo systemctl restart domoticz
 ```
 In the web UI, navigate to the Hardware page. In the hardware dropdown there will be an entry called "SMA Sunny Boy".
 
+Make sure to (temporarily) enable 'Accept new Hardware Devices' in System Settings so that the plugin can add devices.
+
 ## Known issues
 
 ## Updating
